@@ -36,7 +36,9 @@ class RDF_NTriple_Serializer extends RDF_Object
      */
     function &serialize(&$m)
     {
-        if (is_a($m, 'RDF_Model_MDB')) $m = $m->getMemModel();
+        if (!is_a($m, 'RDF_Model_Memory')) {
+            $m =& $m->getMemModel();
+        }
 
         $this->reset();
         if (!RDF_HIDE_ADVERTISE) {
