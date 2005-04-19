@@ -105,12 +105,12 @@ class RDF_NTriple_Serializer extends RDF_Object
         } ;
     }
 
-    /* ==================== Private Methods from here ==================== */
+    /* ==================== protected Methods from here ==================== */
 
     /**
      * Readies this object for serializing another model
      *
-     * @access private
+     * @access protected
      * @param void
      * @returns void
      */
