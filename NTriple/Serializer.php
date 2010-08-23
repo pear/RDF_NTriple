@@ -52,11 +52,11 @@ class RDF_NTriple_Serializer extends RDF_Object
             if (is_a($s, 'RDF_BlankNode')) {
                 $subject = '_:' . $s->getURI();
             } else {
-                $subject = '<' . ereg_replace(' ', '', $s->getURI()) . '>';
+                $subject = '<' . str_replace(' ', '', $s->getURI()) . '>';
             }
 
             $p = $t->getPredicate();
-            $predicate = '<' . ereg_replace(' ', '', $p->getURI()) . '>';
+            $predicate = '<' . str_replace(' ', '', $p->getURI()) . '>';
 
             $o = $t->getObject();
             if (is_a($o, 'RDF_Literal')) {
@@ -70,7 +70,7 @@ class RDF_NTriple_Serializer extends RDF_Object
             } elseif (is_a($o, 'RDF_BlankNode')) {
                 $object = '_:' . $o->getURI();
             } else {
-                $object = '<' . ereg_replace(' ', '', $o->getURI()) . '>';
+                $object = '<' . str_replace(' ', '', $o->getURI()) . '>';
             } ;
 
             $this->res .= $subject . ' ' . $predicate . ' ' . $object . ' .';
